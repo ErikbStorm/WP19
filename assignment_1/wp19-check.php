@@ -7,7 +7,7 @@ $wp_list=Array(
     'Week 5'=>'Assignment 3',
     'Week 6'=>'-',
     'Week 7'=>'Guest Lecture');
-    foreach($wp_listas$week=>$content){
-        echosprintf("%7s | %15s<br>", $week, $content);
+    foreach($wp_list as $week => $content){
+        echo sprintf("%7s | %15s<br>", $week, $content);
     }
 ?>
