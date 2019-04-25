@@ -5,16 +5,22 @@ window.onload = function(){
         createArticle("col-md-12");
         changeListHref();
         changeNavItemColor("red");
-        addSideBar();
-        createTable(createSchedule(), document.getElementsByClassName('col-md-4')[0]);
+        createTable(createSchedule(), document.getElementsByClassName('row')[0]);
 
     }else{
         document.title = "Webprogramming(LIX019P05) -Second";
+        addSideBar('container');
+        var container = document.getElementsByClassName('container')[0];
+        container.style.display = 'flex';
+        createTable(createSchedule(), document.getElementsByClassName('col-md-4')[0]);
     }
 };
 
 
 function createArticle(parentClass){
+    /**
+     * Creates an article that will sit in the given parameter
+     * */
     var article = document.createElement("article");
     var h1 = document.createElement("h1");
     h1.innerHTML = "This is my second header";
@@ -27,6 +33,9 @@ function createArticle(parentClass){
 }
 
 function changeListHref(){
+    /**
+     * Changes the url of the third link to google.com
+     * */
     var list = document.getElementById("links");
     var listItem = list.getElementsByTagName("li")[2];
     var a = listItem.getElementsByTagName("a")[0];
@@ -35,6 +44,9 @@ function changeListHref(){
 }
 
 function changeNavItemColor(color){
+    /**
+     * Changes the colour of elements with the class "nav-item"
+     * */
     var navItems = document.getElementsByClassName("nav-item");
     for (var i = 0; i < navItems.length; i++){
         navItems[i].style.color = color;
@@ -42,6 +54,9 @@ function changeNavItemColor(color){
 }
 
 function createSchedule(){
+    /**
+     * Creates and returns an object with a scedule
+     * */
     var scedule = {
         week1 : "Assignment 1",
         week2 : "No lecture",
@@ -55,6 +70,10 @@ function createSchedule(){
 }
 
 function createTable(data, container){
+    /**
+     * Places a table inside the given container parameter filled with
+     * the data given in the parameter.
+     * */
     //create all objects
     var table = document.createElement('table');
     var thead = document.createElement("thead");
@@ -98,7 +117,10 @@ function createTable(data, container){
     table.style.margin = '10px';
 }
 
-function addSideBar(){
+function addSideBar(container){
+    /**
+     * Adds a sidebar to the webpage
+     * */
     var main_col = document.getElementsByClassName('col-md-12')[0];
     main_col.classList.add('col-md-8');
     main_col.classList.remove('col-md-12');
@@ -106,11 +128,10 @@ function addSideBar(){
     var side_bar = document.createElement('div');
     side_bar.classList.add('col-md-4');
     side_bar.style.padding = '25px 0px 0px 0px';
-    side_bar.style.height = 'inherit';
     var heading = document.createElement('h1');
     heading.innerHTML = 'Sidebar';
     side_bar.appendChild(heading);
 
-    document.getElementsByClassName('row')[0].appendChild(side_bar);
+    document.getElementsByClassName(container)[0].appendChild(side_bar);
 }
 
