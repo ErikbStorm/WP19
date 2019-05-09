@@ -15,6 +15,7 @@
 
 <div class="col-md-12">
     <h1>Welcome to my site!</h1>
+    <a href="assignment2.html" class="badge badge-primary" style='font-size: 1.5em;'>Go to assignment2.html</a>
 </div>
 
 <?php
