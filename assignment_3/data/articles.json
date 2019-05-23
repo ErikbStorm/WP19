@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "date": 1558615563,
+        "title": "Dit is een test news item",
+        "article": "Vet kort artikel"
+    },
+    {
+        "id": 1,
+        "date": 1558615582,
+        "title": "BREAKING NEWS",
+        "article": "BREAKING NEWS"
+    }
+]
